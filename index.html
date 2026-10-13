@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11151d" />
+    <meta name="description" content="Focus Flow ile dikkatini tek bir işe ver, küçük adımlarla ilerle." />
+    <title>Focus Flow — Ritmini bul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Focus Flow ana sayfa"><span class="brand-mark"><i></i><i></i><i></i></span><span>focus<span class="brand-light">flow</span></span></a>
+      <div class="topbar-right"><span class="date" id="today"></span><button class="icon-button" id="sound-toggle" aria-label="Sesleri aç veya kapat" title="Sesleri aç veya kapat">♫</button></div>
+    </header>
+
+    <main class="layout">
+      <section class="welcome">
+        <p class="eyebrow"><span class="live-dot"></span> KENDİ RİTMİNDE İLERLE</p>
+        <h1>Bugün neye<br /><span>odaklanıyoruz?</span></h1>
+        <p class="welcome-copy">Küçük bir başlangıç, büyük bir ilerleme.<br />Bir iş seç ve kendine alan aç.</p>
+      </section>
+
+      <section class="focus-card" aria-label="Odak zamanlayıcısı">
+        <div class="mode-tabs" role="tablist" aria-label="Zamanlayıcı modu">
+          <button class="mode-tab active" data-mode="focus" role="tab" aria-selected="true">Odaklan</button>
+          <button class="mode-tab" data-mode="short" role="tab" aria-selected="false">Kısa mola</button>
+          <button class="mode-tab" data-mode="long" role="tab" aria-selected="false">Uzun mola</button>
+        </div>
+        <div class="timer-wrap">
+          <svg class="timer-ring" viewBox="0 0 280 280" aria-hidden="true">
+            <circle class="ring-track" cx="140" cy="140" r="128" />
+            <circle class="ring-progress" id="ring-progress" cx="140" cy="140" r="128" />
+          </svg>
+          <div class="timer-content"><span class="timer-label" id="timer-label">DERİN ODAK</span><time id="timer">25:00</time><span class="timer-hint" id="timer-hint">Bir işe başlamak için harika bir an.</span></div>
+        </div>
+        <div class="timer-controls"><button class="reset-button" id="reset" aria-label="Zamanlayıcıyı sıfırla" title="Sıfırla">↺</button><button class="start-button" id="start"><span id="start-icon">▶</span><span id="start-text">Başla</span></button><button class="skip-button" id="skip" aria-label="Sonraki moda geç" title="Sonraki mod">↠</button></div>
+        <p class="session-note"><span class="sparkle">✦</span> <span id="session-note">25 dakika sadece senin.</span></p>
+      </section>
+
+      <aside class="side-column">
+        <section class="task-card">
+          <div class="section-heading"><div><p class="eyebrow">BUGÜNÜN NİYETİ</p><h2>Öncelikli işin</h2></div><span class="task-count" id="task-count">0/0</span></div>
+          <form id="task-form" class="task-form"><input id="task-input" maxlength="80" autocomplete="off" placeholder="Aklındaki işi yaz..." aria-label="Yeni bir iş ekle" /><button aria-label="İş ekle">+</button></form>
+          <ul id="task-list" class="task-list"></ul>
+          <p class="empty-state" id="empty-state"><span>✦</span><br />Listen boş. İlk niyetini ekle.</p>
+        </section>
+
+        <section class="stats-card">
+          <div class="stats-heading"><div><p class="eyebrow">GÜNÜN ÖZETİ</p><h2>İstikrarlı adımlar</h2></div><span class="stats-icon">↗</span></div>
+          <div class="stats-main"><strong id="focus-total">0</strong><span>dakika<br />odaklanma</span></div>
+          <div class="stats-footer"><div class="session-dots" id="session-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div><span><b id="focus-count">0</b> tamamlanan seans</span></div>
+        </section>
+        <div class="quote"><span>“</span><p>Harika işler, dikkat dağıtan şeylere hayır demekle başlar.</p></div>
+      </aside>
+    </main>
+    <footer><span>FOCUS FLOW</span><span>Her seans, kendine verdiğin küçük bir söz.</span></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
